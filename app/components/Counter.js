@@ -8,11 +8,12 @@ class Counter extends Component {
     incrementIfOdd: PropTypes.func.isRequired,
     incrementAsync: PropTypes.func.isRequired,
     decrement: PropTypes.func.isRequired,
-    counter: PropTypes.number.isRequired
+    name: PropTypes.string.isRequired
   };
 
   render() {
-    const { increment, incrementIfOdd, incrementAsync, decrement, counter } = this.props;
+    const { increment, incrementIfOdd, incrementAsync, decrement, name } = this.props;
+
     return (
       <div>
         <div className={styles.backButton}>
@@ -21,7 +22,7 @@ class Counter extends Component {
           </Link>
         </div>
         <div className={`counter ${styles.counter}`}>
-          {counter}
+          {name}
         </div>
         <div className={styles.btnGroup}>
           <button className={styles.btn} onClick={increment}>
