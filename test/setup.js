@@ -1,5 +1,8 @@
 import 'babel-polyfill';
 import { jsdom } from 'jsdom';
+import chai from 'chai';
+import chaiImmutable from 'chai-immutable';
+
 
 global.document = jsdom('<!doctype html><html><body></body></html>');
 global.window = document.defaultView;
@@ -15,3 +18,5 @@ window.localStorage = window.sessionStorage = {
     this[key] = undefined;
   },
 };
+
+chai.use(chaiImmutable);

@@ -25,7 +25,12 @@ function deleteFrame(state, frame) {
 export default function studio(state = initialState, action) {
     switch(action.type) {
         case CREATE_FRAME:
-            return state.push(action.frame);
+            let filtered = state.get('data').filter(frame => (frame.get('id') === action.frame.get('id')));
+            if (filtered.size) {
+                return state;
+            } else {
+                return state.update('data', data => data.push(action.frame));
+            }
         case DELETE_FRAME: 
             return deleteFrame(state, action.frame);
     }
