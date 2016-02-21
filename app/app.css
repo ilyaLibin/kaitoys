@@ -1,36 +1,46 @@
+.video-view {
+  position: relative;
+  width: 640px;
+  height: 480px; }
+  .video-view video, .video-view canvas {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    z-index: 2; }
+  .video-view canvas {
+    z-index: 1; }
+
 body {
   position: relative;
   color: #000;
   height: 100vh;
   font-family: Arial, Helvetica, Helvetica Neue;
   overflow-y: hidden;
-  margin: 0;
-}
+  margin: 0; }
 
 h2 {
   margin: 0;
   font-size: 2.25rem;
   font-weight: bold;
   letter-spacing: -.025em;
-  color: #000;
-}
+  color: #000; }
 
 p {
-  font-size: 24px;
-}
+  font-size: 24px; }
 
 li {
-  list-style: none;
-}
+  list-style: none; }
 
 a {
   color: #000;
   opacity: .75;
-  text-decoration: none;
-}
+  text-decoration: none; }
 
 a:hover {
   opacity: 1;
   text-decoration: none;
-  cursor: pointer;
-}
+  cursor: pointer; }
+
+/*# sourceMappingURL=app.css.map */
