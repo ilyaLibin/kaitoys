@@ -12,6 +12,18 @@
   .video-view canvas {
     z-index: 1; }
 
+.home-view {
+  display: table;
+  width: 100%; }
+  .home-view main,
+  .home-view aside {
+    display: table-cell;
+    padding: 0 10px; }
+  .home-view main {
+    width: 66%; }
+  .home-view aside {
+    width: 34%; }
+
 body {
   position: relative;
   color: #000;

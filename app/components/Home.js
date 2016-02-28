@@ -1,18 +1,34 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router';
-import styles from './Home.module.css';
-
-
+import CreateProjectForm from './CreateProjectForm'
 export default class Home extends Component {
-  render() {
-    return (
-      <div>
-        <div className={styles.container}>
-          <h2>Home</h2>
-          <br/>
-          <Link to="/studio">to Studio</Link>
-        </div>
-      </div>
-    );
-  }
+
+    
+    initialStatenewProject = {
+        name: 'My new project',
+    }
+
+    updateForm = function() {
+
+    }
+
+    projectFolderName = function(string) {
+        return string.toLowerCase().split(' ').join('_');
+    };
+
+    createProject = function() {
+        // validateInput. special chars, existing?
+    };
+
+    render() {
+        return (
+            <div className="home-view">
+                <main>
+                    <CreateProjectForm onChange={this.updateForm}/>
+                </main>
+                <aside>
+                    <h3>Existing projects</h3>
+                </aside>
+            </div>
+        );
+    }
 }

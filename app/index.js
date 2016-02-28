@@ -24,3 +24,12 @@ if (process.env.NODE_ENV !== 'production') {
   // module and its dependencies as dead code.
   // require('./createDevToolsWindow')(store);
 }
+
+
+/* TODO 
+
+1. every photo can be edited with paint, adding frases, text.
+2. when edit clicked, i see canvas with no opacity, and can paint on it, then when i click save it rewrite the last image.
+3. generate small thumbnails
+
+*/

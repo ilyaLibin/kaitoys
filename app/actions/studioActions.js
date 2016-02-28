@@ -16,15 +16,3 @@ export function deleteFrame(frame) {
         frame: frame
     }
 }
-
-
-/*
-    studio: [
-        {
-            id: 'frame0',
-            duration: 0.3
-        }
-    ]
-
-
-*/

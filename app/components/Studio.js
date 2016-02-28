@@ -7,17 +7,25 @@ import TextField from 'material-ui/lib/text-field';
 import SelectField from 'material-ui/lib/select-field';
 import MenuItem from 'material-ui/lib/menus/menu-item';
 import RaisedButton from 'material-ui/lib/raised-button';
+import Tabs from 'material-ui/lib/tabs/tabs';
+import Tab from 'material-ui/lib/tabs/tab';
 
 class Studio extends Component {
 
     constructor(props) {
         super(props);
         this.state = {
-            value: 'a',
+            tab: 'a',
         };
     }
 
-    createeFrame = function(e) {
+    changeTab = (tab) => {
+        this.setState({
+            tab: tab,
+        });
+    };
+
+    createFrame = function(e) {
         let frame = fromJS({
             duration: 3,
             id: 'frame' + Date.now()
@@ -28,21 +36,22 @@ class Studio extends Component {
     handleChange = function(event, index, value) {this.duration = value};
     render() {
         const {frames, createFrame} = this.props;
-        return(<div>    
-                    <CameraView></CameraView>
-                    {frames.size}
-                    <ul>
-                        {frames.map((frame) => <li key={frame.get('id')}>{frame.get('id')}</li>)}
-                    </ul>
-                    <TextField hintText="Hint Text"/>
-                    <br/>
-                    <SelectField value={1} onChange={this.handleChange}>
-                        <MenuItem value={1} primaryText="Never"/>
-                        <MenuItem value={2} primaryText="Every Night"/>
-                    </SelectField><br/>
-                    <RaisedButton label="Secondary" secondary={true} onClick={this.createeFrame.bind(this)} /><br/>
-                    <Link to="/">Home</Link>
-                </div>
+        return(<Tabs value={this.state.tab} onChange={this.changeTab}>
+                    <Tab label="Tab A" value="a" >
+                        <CameraView></CameraView>
+                        {frames.size}
+                        <ul>
+                            {frames.map((frame) => <li key={frame.get('id')}>{frame.get('id')}</li>)}
+                        </ul>
+                        <TextField hintText="Hint Text"/>
+                        <br/>
+                        <RaisedButton label="Secondary" secondary={true} onClick={this.createFrame.bind(this)} /><br/>
+                        <Link to="/">Home</Link>
+                    </Tab>
+                    <Tab label="Tab B" value="b" >
+                        <div>Something else</div>
+                    </Tab>
+                </Tabs>
             );
     };
 }

@@ -20,8 +20,6 @@ function deleteFrame(state, frame) {
     return state.filter(n => n.id !== frame.id)
 }
 
-
-
 export default function studio(state = initialState, action) {
     switch(action.type) {
         case CREATE_FRAME:
