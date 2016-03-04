@@ -1,0 +1,6 @@
+.take-photo-btn {
+    position: absolute;
+    right: 10px;
+    bottom: 10px;
+    z-index: 3;
+}

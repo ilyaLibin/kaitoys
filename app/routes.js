@@ -6,7 +6,7 @@ import StudioPage from './containers/StudioPage';
 
 
 export default (
-  <Route path="/" component={StudioPage}>
+  <Route path="/" component={HomePage}>
     <IndexRoute component={HomePage} />
     <Route path="/studio" component={StudioPage} />
   </Route>

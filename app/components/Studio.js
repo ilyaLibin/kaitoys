@@ -57,6 +57,3 @@ class Studio extends Component {
 }
 
 export default Studio;
-
-
-//{frames.map(frame => <div key={frame.id}>{frame.id}</div>)}</div>
