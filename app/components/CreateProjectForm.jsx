@@ -27,12 +27,12 @@ export default class createProjectForm extends Component {
     };
 
     render() {
-        const {addProjectToList, updateNewProjectForm, projects} = this.props;
+        const {addProjectToList, updateNewProjectForm, readFoldersFromDisk, projects} = this.props;
         return (
             <form onChange={this.updateForm.bind(this)}>
                 <h3>Create new project</h3>
                 <TextField name="title" hintText="Project name" value={projects.getIn(['newProjectForm', 'title'])} /><br/>
-                <RaisedButton label="Create project" secondary={true} onClick={this.createProject.bind(this)} />
+                <RaisedButton label="Create project" secondary={true} onClick={(this.createProject.bind(this))} />
             </form> 
         );
     }

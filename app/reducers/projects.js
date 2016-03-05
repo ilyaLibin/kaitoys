@@ -9,7 +9,8 @@ import {SET_CURRENT_PROJECT,
         addProjectToList,
         setProjectList,
         updateNewProjectForm,
-        deleteProject } from '../actions/projectActions';
+        deleteProject,
+        readFoldersFromDisk } from '../actions/projectActions';
 
 const initialState = fromJS({
     currentProjectId: 0,
@@ -20,11 +21,6 @@ const initialState = fromJS({
         }
     ]
 });
-
-
-function deleteFrame(state, frame) {
-    return state.filter(n => n.id !== frame.id)
-}
 
 export default function projects(state = initialState, action) {
     switch(action.type) {

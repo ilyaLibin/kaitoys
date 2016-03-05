@@ -5,7 +5,7 @@ import ProjectsList from './ProjectsList';
 export default class Home extends Component {
 
     render() {
-        const {projects, addProjectToList, updateNewProjectForm} = this.props;
+        const {projects, addProjectToList, readFoldersFromDisk, updateNewProjectForm} = this.props;
         return (
             <div className="home-view">
                 <main>
@@ -13,7 +13,7 @@ export default class Home extends Component {
                 </main>
                 <aside>
                     <h3>Existing projects</h3>
-                    <ProjectsList projects={projects}/>
+                    <ProjectsList projects={projects} readFoldersFromDisk={readFoldersFromDisk}/>
                 </aside>
             </div>
         );

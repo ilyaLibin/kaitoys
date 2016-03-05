@@ -1,10 +1,5 @@
 import React, { Component } from 'react';
 import projects from '../../app/reducers/projects'
-import {setCurrentProject,
-        addProjectToList,
-        setProjectList,
-        deleteProject } from '../../app/actions/projectActions';
-
 
 // material ui
 import List from 'material-ui/lib/lists/list';
@@ -32,6 +27,11 @@ const rightIconMenu = (
 );
 
 export default class ProjectsList extends Component {
+
+    componentDidMount = function() {
+        this.props.readFoldersFromDisk();
+    }
+
     render() {
         const {projects} = this.props;
         return (
